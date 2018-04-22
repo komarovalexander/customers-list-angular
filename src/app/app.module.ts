@@ -7,13 +7,15 @@ import { CustomerDetailComponent } from './customer-detail/customer-detail.compo
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { CustomerFormComponent } from './customer-form/customer-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomersListComponent,
-    CustomerDetailComponent
+    CustomerDetailComponent,
+    CustomerFormComponent
   ],
   imports: [
     BrowserModule,

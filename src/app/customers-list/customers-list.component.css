@@ -22,3 +22,16 @@
   color: grey;
   font-size: 14px;
 }
+
+.btn-primary {
+  margin: 10px;
+}
+
+:host ::ng-deep .form .form-group {
+  margin: 10px 20px;
+}
+
+:host ::ng-deep .form label {
+  margin-right: 10px;
+}
+

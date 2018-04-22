@@ -1,18 +1,5 @@
 import { Injectable } from '@angular/core';
-
-class CustomerName {
-  first: string;
-  last: string;
-}
-
-export class Customer {
-  customerID: number;
-  name: CustomerName;
-  birthday: string;
-  gender: string;
-  lastContact: Date;
-  customerLifetimeValue: number
-}
+import { Customer } from './models/customer';
 
 const customers: Customer[] = [
   {
@@ -92,5 +79,14 @@ export class CustomersService {
   saveCustomer(customer: Customer) {
     var customerOriginal = customers.filter(c => c.customerID == customer.customerID)[0];
     Object.assign(customerOriginal, customer);
+  }
+
+  addCustomer(customer: Customer) {
+
+    customer.customerID = customers[customers.length - 1].customerID + 1;
+    customer.customerLifetimeValue = 0;
+    customer.lastContact = new Date();
+
+    customers.push(customer);
   }
 }

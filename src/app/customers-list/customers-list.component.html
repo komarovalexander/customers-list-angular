@@ -1,5 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<button (click)="createCustomer()" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i></button>
 <ul class="customers list-group">
+  <li class="customer list-group-item" *ngIf="customer">
+    <customer-form
+      [customer]="customer"
+      formType="form-inline"
+      (saveButtonClick)="saveButtonClick()">
+    </customer-form>
+  </li>
+
   <li class="customer list-group-item" *ngFor="let customer of customers">
     <i class="fa fa-times"
       (click)="deleteCustomer(customer)"

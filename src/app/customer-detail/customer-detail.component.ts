@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Customer, CustomersService } from '../customers.service';
+import { CustomersService } from '../customers.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Customer } from '../models/customer';
 
 @Component({
   selector: 'app-customer-detail',
@@ -23,12 +24,12 @@ export class CustomerDetailComponent {
     });
   }
 
-  saveCustomer() {
+  saveButtonClick() {
     this.service.saveCustomer(this.customer);
     this.router.navigate(['']);
   }
 
-  removeCustomer() {
+  removeCustomerClick() {
     this.service.deleteCustomer(this.customer.customerID);
     this.router.navigate(['']);
   }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Customer, CustomersService } from '../customers.service';
+import { CustomersService } from '../customers.service';
+import { Customer } from '../models/customer';
 
 @Component({
   selector: 'app-customers-list',
@@ -10,6 +11,7 @@ import { Customer, CustomersService } from '../customers.service';
 export class CustomersListComponent {
   service: CustomersService;
   customers: Customer[];
+  customer: Customer;
 
   constructor(service: CustomersService) {
     this.service = service;
@@ -20,4 +22,12 @@ export class CustomersListComponent {
     this.service.deleteCustomer(customer.customerID);
   }
 
+  createCustomer() {
+    this.customer = new Customer();
+  }
+
+  saveButtonClick() {
+    this.service.addCustomer(this.customer);
+    this.customer = null;
+  }
 }

@@ -5,6 +5,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CustomersService } from '../customers.service';
 import { Subject } from 'rxjs/Subject';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { CustomerFormComponent } from '../customer-form/customer-form.component';
 
 describe('CustomerDetailComponent', () => {
   let component: CustomerDetailComponent;
@@ -14,7 +15,7 @@ describe('CustomerDetailComponent', () => {
   beforeEach(async(() => {
     params = new Subject<Params>();
     TestBed.configureTestingModule({
-      declarations: [ CustomerDetailComponent ],
+      declarations: [ CustomerDetailComponent, CustomerFormComponent ],
       imports: [
         FormsModule,
         BsDatepickerModule
