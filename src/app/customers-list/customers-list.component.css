@@ -1,3 +1,19 @@
+.customer {
+  padding-right: 30px;
+}
+
+.customer .fa.fa-times {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+.customer .fa.fa-times:hover {
+  opacity: 1;
+}
+
 .customer span {
   cursor: default;
+  white-space: nowrap;
 }

@@ -1,14 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<ul class="customers">
-  <li class="customer" *ngFor="let customer of customers">
+<ul class="customers list-group">
+  <li class="customer list-group-item" *ngFor="let customer of customers">
+    <i class="fa fa-times"
+      (click)="deleteCustomer(customer)"
+      title="Delete a customer"></i>
     <div>
-      <span class="id" title="Customer ID">#{{ customer.id }}</span>
-      <span class="name" title="Customer Name">{{ customer.name }}</span>
-      <span class="companyName" title="Customer Company Name">{{ customer.companyName }}</span>
-      <span class="city" title="Customer City">{{ customer.city }}</span>
+      <span title="Customer Id">#{{ customer.customerID }}</span>
+      <span title="Customer Full Name">{{ customer.name.first }} {{ customer.name.last }} </span>
+      <span title="Customer Lifetime Value">({{ customer.customerLifetimeValue }})</span>
     </div>
-    <div><span class="email" title="Customer Email">{{ customer.email }}</span>
-      <span class="phone" title="Customer Phone">{{ customer.phone }}</span>
+    <div>
+      <span title="Last contact">Last contact: {{ customer.lastContact | date: 'dd/MM/yyyy' }}</span>
     </div>
   </li>
 </ul>
