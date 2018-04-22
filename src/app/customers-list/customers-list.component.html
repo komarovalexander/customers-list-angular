@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<ul class="customers">
+  <li class="customer" *ngFor="let customer of customers">
+    <div>
+      <span class="id" title="Customer ID">#{{ customer.id }}</span>
+      <span class="name" title="Customer Name">{{ customer.name }}</span>
+      <span class="companyName" title="Customer Company Name">{{ customer.companyName }}</span>
+      <span class="city" title="Customer City">{{ customer.city }}</span>
+    </div>
+    <div><span class="email" title="Customer Email">{{ customer.email }}</span>
+      <span class="phone" title="Customer Phone">{{ customer.phone }}</span>
+    </div>
+  </li>
+</ul>
