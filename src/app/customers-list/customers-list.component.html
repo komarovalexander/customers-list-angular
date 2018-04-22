@@ -4,13 +4,11 @@
     <i class="fa fa-times"
       (click)="deleteCustomer(customer)"
       title="Delete a customer"></i>
-    <div>
+    <span>
       <span title="Customer Id">#{{ customer.customerID }}</span>
-      <span title="Customer Full Name">{{ customer.name.first }} {{ customer.name.last }} </span>
+      <span title="Customer Full Name"><a [routerLink]="['customer-detail/', customer.customerID]">{{ customer.name.first }} {{ customer.name.last }}</a></span>
       <span title="Customer Lifetime Value">({{ customer.customerLifetimeValue }})</span>
-    </div>
-    <div>
-      <span title="Last contact">Last contact: {{ customer.lastContact | date: 'dd/MM/yyyy' }}</span>
-    </div>
+    </span>
+    <span class="last-contact" title="Last contact">Last contact: {{ customer.lastContact | date: 'dd/MM/yyyy' }}</span>
   </li>
 </ul>

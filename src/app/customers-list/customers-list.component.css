@@ -17,3 +17,8 @@
   cursor: default;
   white-space: nowrap;
 }
+
+.customer .last-contact {
+  color: grey;
+  font-size: 14px;
+}

@@ -1,0 +1,15 @@
+h1 {
+  font-size: 32px;
+  font-weight: normal;
+  word-wrap: break-word;
+}
+
+.issues-link {
+  color: #586069;
+  text-decoration: none;
+}
+
+.form {
+  padding: 0 10px;
+  max-width: 400px;
+}

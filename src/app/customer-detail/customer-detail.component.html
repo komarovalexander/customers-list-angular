@@ -1,3 +1,36 @@
-<p>
-  customer-detail works!
-</p>
+<a class="customers-link" routerLink="/"><i class="fa fa-arrow-left"></i> Back to the list of customers</a>
+
+<div *ngIf="customer">
+  <h1>Customer #{{ customer.customerID }}</h1>
+  <div class="form">
+    <div class="form-group">
+      <label>First Name:</label>
+      <input [(ngModel)]="customer.name.first" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Last Name:</label>
+      <input [(ngModel)]="customer.name.last" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Sex:</label>
+      <select [(ngModel)]="customer.gender" class="form-control">
+        <option ngValue="m">Male</option>
+        <option ngValue="w">Female</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Birthday:</label>
+      <input #drp="bsDatepicker"
+        bsDatepicker
+        [bsConfig]="{
+          dateInputFormat: 'YYYY-MM-DD',
+          containerClass: 'theme-blue'
+        }"
+        [(ngModel)]="customer.birthday"
+        class="form-control">
+    </div>
+    <button class="btn btn btn-primary" (click)="saveCustomer()">Save</button>
+
+    <button class="btn btn btn-danger" (click)="removeCustomer()">Remove</button>
+  </div>
+</div>

@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { CustomersListComponent } from './customers-list/customers-list.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    BsDatepickerModule.forRoot(),
     AppRoutingModule
   ],
   providers: [],

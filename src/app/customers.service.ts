@@ -79,13 +79,18 @@ export class CustomersService {
   }
 
   getCustomer(customerID: number) {
-    return customers.filter(c => c.customerID === customerID)[0]
+    return customers.filter(c => c.customerID == customerID)[0]
   }
 
   deleteCustomer(customerID: number) {
     customers.forEach( (item, index) => {
-      if(item.customerID === customerID)
+      if(item.customerID == customerID)
         customers.splice(index, 1);
     });
+  }
+
+  saveCustomer(customer: Customer) {
+    var customerOriginal = customers.filter(c => c.customerID == customer.customerID)[0];
+    Object.assign(customerOriginal, customer);
   }
 }
